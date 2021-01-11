@@ -14,7 +14,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -29,6 +29,8 @@ p {
 img {
   padding-right: 1rem;
 }
+
+/*  */
 
 .topnav {
   overflow: hidden;
@@ -307,15 +309,19 @@ input[data-error]::after {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
+  background-color: transparent;
+  border: none;
 }
 .close:before,
 .close:after {
   position: absolute;
-  left: 15px;
+  /* left: 15px; */
   content: " ";
   height: 33px;
   width: 3px;
   background-color: #fff;
+  left: 13px;
+  top: -0.1rem;
 }
 .close:before {
   transform: rotate(45deg);

@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="modal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
-  <script src="./js/modal.js"></script>
 </head>
 
 <body class="index">
@@ -23,6 +22,7 @@
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Évènements passés</span></a>
+        <!-- Menu burger -->
         <a href="javascript:void(0);" class="icon" onclick="editNav()">
           <i class="fa fa-bars"></i>
         </a>
@@ -55,7 +55,7 @@
 
     <div class="bground">
       <div class="content">
-        <span class="close"></span>
+        <button class="close"></button>
         <div class="modal-body">
           <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
             <div class="formData">
@@ -131,6 +131,7 @@
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
+  <script src="./js/modal.js"></script>
 
 </body>
 

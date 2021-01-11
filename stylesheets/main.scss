@@ -10,14 +10,13 @@
 @import "themes/default";
 
 // 4. Style de base
-@import "base/base", "base/fonts", "base/typography", "base/helpers",
-  "base/animation";
+@import "base/base", "base/fonts", "base/helpers";
 
 // 5. Contiens les blocs BEM qui sont plus indépendants
-@import "components/button", "components/restaurants";
+@import "components/button";
 
 // 6. Contiens les blocs BEM pour les parties principales
 @import "layout/header", "layout/footer", "layout/main";
 
 // 7. Contiens les blocs BEM qui ne s’appliquent qu’à une seule page
-@import "pages/index", "pages/menu";
+@import "pages/index";
