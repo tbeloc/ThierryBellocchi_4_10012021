@@ -13,6 +13,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
+const inputBtn = document.querySelectorAll("input");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -30,5 +31,20 @@ function stopModal() {
   modalbg.style.display = "none";
 }
 
+//
+inputBtn.forEach((input) => input.addEventListener("input", checkPrenom));
+
+//
+function checkPrenom() {
+  console.log(inputBtn);
+  // console.log(inputBtn);
+}
+
+// function checkNom() {}
+// function checkEmail() {}
+
 // display log
-console.log(modalBtn);
+// console.log(formsPrenom);
+// console.log(modalBtn);
+console.log(document);
+console.log(window);

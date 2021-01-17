@@ -312,6 +312,7 @@ input[data-error]::after {
   background-color: transparent;
   border: none;
 }
+
 .close:before,
 .close:after {
   position: absolute;
