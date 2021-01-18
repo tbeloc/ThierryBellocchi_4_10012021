@@ -212,7 +212,34 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after {
+
+.formData:invalid {
+  border: 2px solid #e54858;
+}
+
+#first-error,
+#last-error,
+#email-error {
+  opacity: 0;
+  font-size: 0.4em;
+  color: #e54858;
+}
+
+/* .formData:invalid > .first-error {
+  opacity: 1;
+}
+
+.formData:invalid
+  > .bground
+  > .content
+  > .modal-body
+  > .formSubscriber
+  > .formData
+  > .first-error {
+  opacity: 1;
+} */
+
+/* .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -230,12 +257,13 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+
 input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
 } */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;

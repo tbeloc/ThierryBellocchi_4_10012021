@@ -13,38 +13,55 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
-const inputBtn = document.querySelectorAll("input");
+// const inputBtn = document.querySelectorAll("input");
+// const submitBtn = document.getElementById("formSubscriber");
 
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// stop modal event
-modalCloseBtn.addEventListener("click", stopModal);
-
-// launch modal form
+// function launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-// close modal form
+// launch modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
+// function close modal form
 function stopModal() {
   modalbg.style.display = "none";
 }
 
-//
-inputBtn.forEach((input) => input.addEventListener("input", checkPrenom));
+// stop modal event
+modalCloseBtn.addEventListener("click", stopModal);
 
 //
-function checkPrenom() {
-  console.log(inputBtn);
-  // console.log(inputBtn);
+function checkInput(input, type, pattern) {
+  console.log(input);
+  const firstInput = document.getElementById(input);
+  if (pattern != null) {
+    firstInput.setAttribute("pattern", pattern);
+  }
+  firstInput.setAttribute("required", "");
+  firstInput.setAttribute("type", type);
+  firstInput.addEventListener("blur", goCheck);
+
+  function goCheck() {
+    const error = document.getElementById(input + "-error");
+    if (!firstInput.validity.valid) {
+      // console.log("NOK");
+      // console.log(firstInput);
+      error.style.opacity = 1;
+    } else {
+      error.style.opacity = 0;
+    }
+  }
 }
 
-// function checkNom() {}
-// function checkEmail() {}
+function checkDate(input) {}
 
-// display log
-// console.log(formsPrenom);
-// console.log(modalBtn);
-console.log(document);
-console.log(window);
+// Validation du nom
+checkInput("first", "text", "[A-Za-z]{2,}");
+
+// Validation du prénom
+checkInput("last", "text", "[A-Za-z]{2,}");
+
+// Validation email
+checkInput("email", "email", null);
