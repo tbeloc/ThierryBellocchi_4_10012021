@@ -219,7 +219,9 @@ input {
 
 #first-error,
 #last-error,
-#email-error {
+#email-error,
+#quantity-error,
+#checkbox-error {
   opacity: 0;
   font-size: 0.4em;
   color: #e54858;
