@@ -60,18 +60,18 @@
           <form id="formSubscriber" class="formSubscriber" name="reserve" action="index.html" method="get"
             onsubmit="return validate();">
             <div class="formData">
-              <label for="first">Prénom</label>
-              <input class="text-control" id="first" name="first" />
+              <label for="first">Prénom*</label>
+              <input class="text-control" id="first" name="first" type="text" pattern="[A-Za-z]{2,}" required />
               <p class="first-error" id="first-error">Le prénom doit avoir un minimum de 2 caractères</p>
             </div>
             <div class="formData">
-              <label for="last">Nom</label>
-              <input class="text-control" id="last" name="last" />
+              <label for="last">Nom*</label>
+              <input class="text-control" id="last" name="last" type="text" pattern="[A-Za-z]{2,}" required />
               <p class="last-error" id="last-error">Le nom doit avoir un minimum de 2 caractères !</p>
             </div>
             <div class="formData">
-              <label for="email">E-mail</label>
-              <input class="text-control" id="email" name="email" />
+              <label for="email">E-mail*</label>
+              <input class="text-control" id="email" name="email" type="email" required />
               <p class="email-error" id="email-error">Ceci n'est pas une adresse email valide !</p>
             </div>
             <div class="formData">
@@ -81,12 +81,12 @@
             </div>
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
-              <input class="text-control" id="quantity" name="quantity">
+              <input class="text-control" id="quantity" name="quantity" type="number" min="0" max="99">
               <p class="quantity-error" id="quantity-error">Vous devez entre un chiffre entre 0 et 99 !</p>
             </div>
-            <p class="text-label">Quelles villes ?</p>
-            <div class="formData" required>
-              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
+            <p class="text-label">Quelles villes ?*</p>
+            <div class="formData">
+              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" checked />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
                 New York</label>
@@ -114,10 +114,10 @@
             <p class="checkbox-error" id="checkbox-error">Vous devez sélectionner</p>
 
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
-              <label class="checkbox2-label" for="checkbox1" required>
+              <input class="checkbox-input" type="checkbox" id="checkbox1" required />
+              <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
-                J'ai lu et accepté les conditions d'utilisation.
+                J'ai lu et accepté les conditions d'utilisation.*
               </label>
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
@@ -127,7 +127,7 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <input class="btn-submit" id="btn-submit" type="submit" class="button" value="C'est parti" disabled />
           </form>
         </div>
       </div>

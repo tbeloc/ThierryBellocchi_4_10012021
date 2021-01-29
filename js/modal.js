@@ -1,4 +1,4 @@
-// Menu burger
+// menu burger
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -8,80 +8,84 @@ function editNav() {
   }
 }
 
-// DOM Elements
+// dom elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
-// const inputBtn = document.querySelectorAll("input");
-// const submitBtn = document.getElementById("formSubscriber");
-
-// function launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+const checkboxConditions = document.getElementById("checkbox1");
+// const formSubscriber = document.getElementById("formSubscriber");
 
 // function close modal form
 function stopModal() {
   modalbg.style.display = "none";
 }
 
+// function launch modal form
+function launchModal() {
+  modalbg.style.display = "block";
+  document.getElementById("first").focus();
+}
+
+// start modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
 // stop modal event
 modalCloseBtn.addEventListener("click", stopModal);
 
+// form conditions
+checkboxConditions.addEventListener("change", validSubmit);
+
 //
-function checkInput(input, type, pattern, min, max) {
-  // console.log(input);
-  const firstInput = document.getElementById(input);
-
-  if (pattern != null) {
-    firstInput.setAttribute("pattern", pattern);
-  }
-
-  if (min != null) {
-    firstInput.setAttribute("min", min);
-  }
-
-  if (max != null) {
-    firstInput.setAttribute("max", max);
-  }
-
-  firstInput.setAttribute("required", "");
-  firstInput.setAttribute("type", type);
-  firstInput.addEventListener("blur", goCheck);
-
+function checkInput(input) {
+  const inputElement = document.getElementById(input);
   function goCheck() {
     const error = document.getElementById(input + "-error");
-    //checkValidity
-    if (firstInput.checkValidity()) {
-      // if (!firstInput.validity.valid) {
+    if (inputElement.checkValidity()) {
+      console.log(inputElement);
       error.style.opacity = 0;
+      inputElement.style.borderColor = "#ffffff";
     } else {
+      console.log(inputElement);
       error.style.opacity = 1;
+      inputElement.style.borderColor = "#e54858";
     }
+    validSubmit();
+  }
+  inputElement.addEventListener("blur", goCheck);
+}
+
+function validSubmit() {
+  var isValid = true;
+  const inputAll = document.querySelectorAll("input");
+
+  inputAll.forEach((element) => validForm(element));
+
+  function validForm(element) {
+    if (!element.checkValidity()) {
+      isValid = false;
+    }
+  }
+
+  if (isValid) {
+    document.getElementById("btn-submit").setAttribute("disabled", "false");
+    document.getElementById("btn-submit").style.opacity = "1";
+    console.log(document.getElementById("btn-submit"));
+  } else {
+    document.getElementById("btn-submit").setAttribute("disabled", "true");
+    document.getElementById("btn-submit").style.opacity = "0.2";
+    console.log(document.getElementById("btn-submit"));
   }
 }
 
-//checkValidity
-
 // Validation du nom
-checkInput("first", "text", "[A-Za-z]{2,}", null, null);
+checkInput("first");
 
 // Validation du prénom
-checkInput("last", "text", "[A-Za-z]{2,}", null, null);
+checkInput("last");
 
 // Validation email
-checkInput("email", "email", null, null, null);
+checkInput("email");
 
 //
-checkInput("quantity", "number", null, 0, 99);
-
-var checkboxes = document.querySelectorAll('input[type="radio"]:checked');
-
-// check lenght
-
-var checkedOne = Array.prototype.slice.call(checkboxes).some((x) => x.checked);
-console.log(checkedOne);
+checkInput("quantity");

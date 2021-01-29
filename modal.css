@@ -211,11 +211,16 @@ input {
   border-radius: 8px;
   font-size: 20px;
   height: 48px;
+  border: 1px solid #ffffff;
 }
 
-.formData:invalid {
+/* .formData:invalid {
   border: 2px solid #e54858;
-}
+} */
+
+/* .formData:focus:required:invalid {
+  border: 2px solid #e54858;
+} */
 
 #first-error,
 #last-error,
@@ -360,7 +365,7 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
-.btn-submit,
+
 .btn-signup {
   background: #fe142f;
   display: block;
@@ -372,6 +377,20 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+.btn-submit {
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  opacity: 0.2;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
