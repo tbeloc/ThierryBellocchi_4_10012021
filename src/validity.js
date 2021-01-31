@@ -3,7 +3,7 @@ const checkboxConditions = document.getElementById("checkbox1");
 checkboxConditions.addEventListener("change", validSubmit);
 
 //
-function validSubmit() {
+export function validSubmit() {
   var isValid = true;
   const inputAll = document.querySelectorAll("input");
   const btnSubmit = document.getElementById("btn-submit");

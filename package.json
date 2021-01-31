@@ -3,16 +3,10 @@
   "version": "1.0.0",
   "description": "1. Forkez ce repo ; 2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ; 3. Il n'y a aucune dépendance ; 4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.",
   "main": "index.js",
-  "dependencies": {
-    "babel-loader": "^8.2.2",
-    "sass": "^1.32.5",
-    "webpack": "^5.19.0",
-    "webpack-cli": "^4.4.0",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "start": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -24,5 +18,24 @@
   "bugs": {
     "url": "https://github.com/tbeloc/ThierryBellocchi_4_10012021/issues"
   },
-  "homepage": "https://github.com/tbeloc/ThierryBellocchi_4_10012021#readme"
+  "homepage": "https://github.com/tbeloc/ThierryBellocchi_4_10012021#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^7.1.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.1",
+    "postcss-loader": "^4.2.0",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.19.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {}
 }

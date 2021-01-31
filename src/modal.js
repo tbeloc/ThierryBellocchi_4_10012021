@@ -1,3 +1,6 @@
+import { from } from "webpack-sources/lib/CompatSource";
+import { validSubmit } from "./validity";
+
 // dom
 const modal = document.querySelector(".bground");
 const modalOpenBtn = document.querySelectorAll(".modal-btn");
@@ -16,7 +19,7 @@ function editNav() {
 // open modal
 function launchModal() {
   modal.style.display = "block";
-  // validSubmit();
+  validSubmit();
   document.getElementById("first").focus();
 }
 
