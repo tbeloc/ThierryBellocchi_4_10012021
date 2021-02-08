@@ -227,7 +227,8 @@ input {
 #email-error,
 #quantity-error,
 #checkbox-error {
-  opacity: 0;
+  /* opacity: 0; */
+  visibility: hidden;
   font-size: 0.4em;
   color: #e54858;
 }
@@ -583,4 +584,12 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+/* #first-error {
+  visibility: hidden;
+} */
+
+#first:invalid + #first-error {
+  visibility: inherit;
 }

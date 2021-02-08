@@ -17,19 +17,15 @@ function editNav() {
 }
 
 // open modal
-function launchModal() {
-  modal.style.display = "block";
-  validSubmit();
-  document.getElementById("first").focus();
-}
+modalOpenBtn.forEach((btn) =>
+  btn.addEventListener("click", function () {
+    modal.style.display = "block";
+    validSubmit();
+    document.getElementById("first").focus();
+  })
+);
 
 // close modal
-function stopModal() {
+modalCloseBtn.addEventListener("click", function () {
   modal.style.display = "none";
-}
-
-// open modal
-modalOpenBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// close modal
-modalCloseBtn.addEventListener("click", stopModal);
+});
